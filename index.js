@@ -1,3 +1,13 @@
+/*
+
+To Do:
+* decrement counter for button presses and send to index.htm
+* create feedback mechanism for button press. colors change, sound goes off, etc
+* create end state screen for button press after 3 presses
+* randomize which button needs to be pressed and communicate that to the player
+	
+*/
+
 // Various Requires for Node Plugins
 // var http = require('http');
 var ejs = require('ejs');
@@ -14,7 +24,20 @@ var dash = dash_button("74:c2:46:58:4b:11", null, 60000); //address from step ab
 
 // For now, just setting a dummy Dash ID up
 var dash_id="74:c2:46:58:4b:11";
+var button_count1=3;
+var button_count2=3;
+var button_count3=3;
+var button_count4=3;
+var button_selection1 = ["74:c2:46:58:4b:11","74:c2:46:58:4b:12","74:c2:46:58:4b:13"];
+var button_selection2 = ["74:c2:46:58:4b:14","74:c2:46:58:4b:15","74:c2:46:58:4b:16"];
+var button_selection3 = ["74:c2:46:58:4b:17","74:c2:46:58:4b:18","74:c2:46:58:4b:19"];
+var button_selection4 = ["74:c2:46:58:4b:20","74:c2:46:58:4b:21","74:c2:46:58:4b:22"];
 
+if (button_selection1[0]=="74:c2:46:58:4b:11") {
+	button_count1--;
+} else if (){
+	
+}
 
 // Start Express server
 app.get('/', function(req,res) {
@@ -30,7 +53,7 @@ app.get('/index.htm', function(req,res){
 	    return;
 	  }
 
-	  var renderedHtml = ejs.render(content, {dash_id: dash_id});  //get redered HTML code
+	  var renderedHtml = ejs.render(content, {dash_id: dash_id, button_count1:button_count1});
 	  res.end(renderedHtml);
 	});
 	// End sending data to static files
