@@ -28,9 +28,7 @@ var button_count=3;
 var button_selection = ["74:c2:46:58:4b:11","74:c2:46:58:4b:12","74:c2:46:58:4b:13"];
 
 if (button_selection[0]=="74:c2:46:58:4b:11") {
-	button_count1--;
-} else if (){
-	
+	//button_count1--;
 }
 
 // Start Express server
